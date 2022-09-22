@@ -1,15 +1,26 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+ <div class="container">
+  <ListaMemes/>
+ </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import {useStore} from "vuex";
+import ListaMemes from "@/components/ListaMemes.vue";
 export default {
+  
   name: 'App',
   components: {
-    HelloWorld
+    ListaMemes
+    
+  },
+
+  setup() {
+   const store = useStore();
+
+   return {
+    store
+   }
   }
 }
 </script>
